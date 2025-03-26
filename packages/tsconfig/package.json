@@ -1,0 +1,13 @@
+{
+  "name": "@l1network/tsconfig",
+  "dependencies": {
+    "@total-typescript/ts-reset": "^0.5.1"
+  },
+  "files": [
+    "base.json",
+    "reset.json",
+    "nextjs.json",
+    "node.json",
+    "react-library.json"
+  ]
+}
