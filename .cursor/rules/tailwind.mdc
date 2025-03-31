@@ -1,19 +1,20 @@
 ---
 description: Tailwind CSS and UI component guidelines
-globs: "**/*.{ts,tsx,css}"
+globs: .tsx
+alwaysApply: false
 ---
 
 # Tailwind & UI Rules
 
 ## Core Principles
 - Use mobile-first responsive design
-- Use Shadcn UI components from @l1network/ui
+- Use Shadcn UI components from @repo/ui
 - Follow design system tokens
 - Use lucide-react icons
 
 ## Component Patterns
 ```tsx
-import { cn } from '@l1network/utils'
+import { cn } from '@repo/utils'
 import { cva } from 'class-variance-authority'
 
 const buttonVariants = cva(
