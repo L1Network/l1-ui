@@ -12,6 +12,17 @@ import { cn } from '@l1network/ui/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+interface NavOption {
+  text: string
+  href?: string
+  icon?: null
+  options?: Array<{
+    title: string
+    href: string
+    description: string
+  }>
+}
+
 export function Menu() {
   const pathname = usePathname()
 
@@ -20,7 +31,7 @@ export function Menu() {
       <NavigationMenuList>
         {navOptions.map((option) => (
           <NavigationMenuItem key={option.text}>
-            {option.options ? (
+            {option.options && option.options.length > 0 ? (
               <>
                 <NavigationMenuTrigger className="text-md font-normal data-[state=open]:rounded-full hover:rounded-full text-neutral-dark hover:text-foreground px-2 py-1 h-auto">
                   {option.text}
@@ -39,7 +50,7 @@ export function Menu() {
                   </ul>
                 </NavigationMenuContent>
               </>
-            ) : (
+            ) : option.href ? (
               <Link href={option.href} legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
@@ -54,7 +65,7 @@ export function Menu() {
                   {option.text}
                 </NavigationMenuLink>
               </Link>
-            )}
+            ) : null}
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>
@@ -88,27 +99,11 @@ function isActive(href: string, pathname: string) {
   return pathname.startsWith(href)
 }
 
-const navOptions = [
+const navOptions: NavOption[] = [
   { text: 'Home', href: '/', icon: null },
   { text: 'Roadmap', href: '/roadmap', icon: null },
   {
     text: 'More',
-    options: [
-      {
-        title: 'Documentation',
-        href: '/',
-        description: "Learn how to use L1Network's products and services.",
-      },
-      {
-        title: 'Blog',
-        href: '/',
-        description: 'Read the latest news and updates from L1Network.',
-      },
-      {
-        title: 'FAQ',
-        href: '/',
-        description: 'Find answers to frequently asked questions.',
-      },
-    ],
+    options: [],
   },
 ]

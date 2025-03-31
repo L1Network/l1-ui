@@ -13,7 +13,7 @@ export function Header() {
         }
       >
         <div className="flex items-center gap-3">
-          <Link href="/">L1Network</Link>
+          <Link href="/">L1Network Explorer</Link>
 
           <div className="hidden md:flex md:gap-3 md:pl-4 lg:ml-[-1px] lg:gap-10">
             <Menu />

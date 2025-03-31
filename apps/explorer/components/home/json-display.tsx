@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@l1network/ui'
+import { Button } from '@l1network/ui/components'
 import { Check, ChevronDown, ChevronRight, Copy } from 'lucide-react'
 import { useState } from 'react'
 

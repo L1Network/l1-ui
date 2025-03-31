@@ -1,7 +1,7 @@
 'use client'
 
+import { useChat } from '@ai-sdk/react'
 import { Button, Card, Input } from '@l1network/ui/components'
-import { useChat } from 'ai/react'
 import { Send } from 'lucide-react'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
